@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ofertas ML — descubrí productos y ofertas de Mercado Libre en un solo lugar.">
+<title>Ofertas ML | Ofertas y productos destacados</title>
+<style>
+:root{--yellow:#ffe600;--blue:#3483fa;--dark:#172033;--muted:#667085;--bg:#f5f6f8;--card:#fff;--green:#00a650}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--dark)}
+a{text-decoration:none;color:inherit}.top{background:#111827;color:#fff;text-align:center;padding:8px 16px;font-size:13px}
+header{position:sticky;top:0;z-index:20;background:var(--yellow);box-shadow:0 2px 12px #0002}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:18px;padding:14px 18px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:900;font-size:21px;white-space:nowrap}.logo-mark{width:38px;height:38px;background:#111827;border-radius:11px;display:grid;place-items:center;color:var(--yellow);font-size:21px}
+.search{flex:1;display:flex;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px #0002}.search input{border:0;outline:0;padding:12px 14px;width:100%;font-size:15px}.search button{border:0;background:#fff;padding:0 16px;font-size:18px;cursor:pointer}
+.hero{background:linear-gradient(135deg,#111827,#243b64);color:#fff}.hero-inner{max-width:1180px;margin:auto;padding:54px 18px;display:flex;align-items:center;justify-content:space-between;gap:30px}.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.02;margin:0 0 14px}.hero p{color:#d9e2f2;max-width:620px;font-size:17px}.cta{display:inline-flex;background:var(--yellow);color:#111827;font-weight:800;padding:13px 18px;border-radius:10px;margin-top:8px}.hero-badge{font-size:76px;filter:drop-shadow(0 15px 20px #0005)}
+.wrap{max-width:1180px;margin:auto;padding:28px 18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:16px}.section-head h2{margin:0;font-size:25px}.section-head span{color:var(--muted);font-size:14px}
+.filters{display:flex;gap:9px;overflow:auto;padding-bottom:8px}.filter{border:1px solid #d8dce5;background:#fff;border-radius:999px;padding:9px 15px;cursor:pointer;white-space:nowrap}.filter.active{background:#111827;color:#fff;border-color:#111827}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 5px 20px #1018280d;border:1px solid #eaecf0;display:flex;flex-direction:column}.pic{height:190px;background:#f0f2f5;display:grid;place-items:center;font-size:70px;position:relative}.discount{position:absolute;top:12px;left:12px;background:#e7f8ee;color:#087a3e;font-size:12px;font-weight:800;padding:6px 9px;border-radius:7px}.info{padding:16px;display:flex;flex-direction:column;flex:1}.cat{font-size:11px;text-transform:uppercase;color:var(--muted);font-weight:700;letter-spacing:.5px}.title{font-weight:750;margin:7px 0 8px;line-height:1.3}.old{font-size:13px;color:#98a2b3;text-decoration:line-through}.price{font-size:25px;font-weight:900;margin:2px 0;color:#111827}.ship{color:var(--green);font-size:12px;font-weight:700;margin-bottom:13px}.buy{margin-top:auto;text-align:center;background:var(--blue);color:#fff;font-weight:800;padding:11px;border-radius:9px}.empty{padding:30px;text-align:center;color:var(--muted);grid-column:1/-1}
+.deal{margin-top:26px;background:var(--yellow);border-radius:18px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:15px}.deal h3{margin:0 0 5px;font-size:23px}.timer{font-weight:900;font-size:20px}.deal a{background:#111827;color:#fff;padding:11px 16px;border-radius:9px;font-weight:800}
+footer{margin-top:35px;background:#111827;color:#d0d5dd}.foot{max-width:1180px;margin:auto;padding:30px 18px;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot strong{color:#fff}.fine{font-size:12px;line-height:1.6;max-width:700px;color:#98a2b3}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero-inner{padding:42px 18px}.hero-badge{display:none}}
+@media(max-width:560px){.nav{flex-wrap:wrap;gap:10px}.logo{width:100%}.search{order:2;flex-basis:100%}.grid{grid-template-columns:1fr 1fr;gap:10px}.pic{height:145px}.info{padding:12px}.price{font-size:21px}.deal{display:block}.deal a{display:inline-block;margin-top:12px}}
+</style>
+</head>
+<body>
+<div class="top">🔥 Selección de productos y ofertas destacadas</div>
+<header><nav class="nav">
+  <a class="logo" href="#"><span class="logo-mark">ML</span> Ofertas ML</a>
+  <div class="search"><input id="search" placeholder="Buscar productos..." aria-label="Buscar productos"><button onclick="render()">⌕</button></div>
+</nav></header>
+
+<section class="hero"><div class="hero-inner">
+  <div><h1>Encontrá tu próxima oferta.</h1><p>Explorá productos destacados y accedé directamente a Mercado Libre para ver disponibilidad, precio y condiciones actualizadas.</p><a class="cta" href="#productos">Ver ofertas ↓</a></div>
+  <div class="hero-badge">🏷️</div>
+</div></section>
+
+<main class="wrap">
+  <div class="section-head"><h2 id="productos">Productos destacados</h2><span id="count"></span></div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="deal">
+    <div><h3>⚡ Mirá las ofertas disponibles</h3><div class="timer" id="timer">Actualización diaria</div></div>
+    <a href="https://meli.la/1HUSFA6" target="_blank" rel="noopener noreferrer">Ver en Mercado Libre</a>
+  </div>
+</main>
+
+<footer><div class="foot">
+  <div><strong>🔥 Ofertas ML</strong><br><span>Ofertas y productos destacados.</span></div>
+  <div class="fine">Ofertas ML es un sitio independiente. Los botones de compra dirigen a Mercado Libre. Los precios, disponibilidad, envío y condiciones pueden cambiar y deben verificarse en la página de Mercado Libre antes de comprar.</div>
+</div></footer>
+
+<script>
+const products=[
+ {title:"Producto destacado 1",cat:"Tecnología",price:"$ —",old:"Precio a consultar",discount:"OFERTA",emoji:"📱",url:"https://meli.la/1HUSFA6"},
+ {title:"Producto destacado 2",cat:"Hogar",price:"$ —",old:"Precio a consultar",discount:"OFERTA",emoji:"🏠",url:"https://meli.la/1r29kL6"},
+ {title:"Producto destacado 3",cat:"Gaming",price:"$ —",old:"Precio a consultar",discount:"DESTACADO",emoji:"🎮",url:"https://meli.la/1HUSFA6"},
+ {title:"Producto destacado 4",cat:"Accesorios",price:"$ —",old:"Precio a consultar",discount:"DESTACADO",emoji:"🎧",url:"https://meli.la/1r29kL6"}
+];
+let active="Todos";
+const cats=["Todos",...new Set(products.map(p=>p.cat))];
+document.getElementById("filters").innerHTML=cats.map(c=>`<button class="filter ${c==="Todos"?"active":""}" onclick="setCat('${c}')">${c}</button>`).join("");
+function setCat(c){active=c;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.textContent===c));render()}
+function render(){
+ const q=document.getElementById("search").value.toLowerCase().trim();
+ const list=products.filter(p=>(active==="Todos"||p.cat===active)&&(p.title.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)));
+ document.getElementById("count").textContent=`${list.length} producto${list.length!==1?"s":""}`;
+ document.getElementById("grid").innerHTML=list.length?list.map(p=>`<article class="card"><div class="pic"><span class="discount">${p.discount}</span>${p.emoji}</div><div class="info"><div class="cat">${p.cat}</div><div class="title">${p.title}</div><div class="old">${p.old}</div><div class="price">${p.price}</div><div class="ship">✓ Compra y condiciones en Mercado Libre</div><a class="buy" href="${p.url}" target="_blank" rel="noopener noreferrer">Ver en Mercado Libre</a></div></article>`).join(""):`<div class="empty">No encontramos productos con esa búsqueda.</div>`;
+}
+render();
+</script>
+</body></html>
